@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+.divider {
+	margin: 0 auto;
+	position: relative;
+	width: 200px;
+	margin-top: 20px;
+
+	&__img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		width: 60px;
+		height: 2px;
+		background: $main-color;
+
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&::before {
+		left: 0;
+	}
+	&::after {
+		right: 0;
+	}
+
+	&_header {
+		&::before,
+		&::after {
+			background: $header-color;
+		}
+	}
+	&_footer {
+		margin-top: 30px;
+	}
+}
